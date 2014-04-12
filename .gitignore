@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Xcode
 #
 build/
@@ -16,10 +17,17 @@ DerivedData
 *.hmap
 *.ipa
 
+=======
+>>>>>>> 0a854a5b0ddd6761ff68279124228b27ac5baec6
 # CocoaPods
 #
 # We recommend against adding the Pods directory to your .gitignore. However
 # you should judge for yourself, the pros and cons are mentioned at:
 # http://guides.cocoapods.org/using/using-cocoapods.html#should-i-ignore-the-pods-directory-in-source-control?
 #
+<<<<<<< HEAD
 # Pods/
+=======
+# Pods/
+
+>>>>>>> 0a854a5b0ddd6761ff68279124228b27ac5baec6

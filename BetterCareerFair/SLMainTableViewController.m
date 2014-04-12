@@ -26,6 +26,35 @@
     return self;
 }
 
+-(void)runFireBase
+{
+    Firebase * fire = [[Firebase alloc] initWithUrl:@"https://amber-fire-5695.firebaseio.com/testBeaconID1"];
+    
+    // Read data and react to changes
+    [fire observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        
+        FDataSnapshot *child = [snapshot childSnapshotForPath:@"slee168"];
+        NSLog( @"The child: %@", child.value );
+        
+        NSData * decodedData = [[NSData alloc] initWithBase64EncodedString:child.value options:0];
+        
+        NSString * documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+        
+        NSString * path = [documentsDirectory stringByAppendingPathComponent:@"test.pdf"];
+        [decodedData writeToFile:path atomically:YES];
+        
+        UIDocumentInteractionController *docController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
+        docController.delegate = self;
+        docController.UTI = @"com.adobe.pdf";
+        [docController presentPreviewAnimated:YES];
+        
+    }];
+}
+
+- (UIViewController *)documentInteractionControllerViewControllerForPreview: (UIDocumentInteractionController *) controller {
+    return self;
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];

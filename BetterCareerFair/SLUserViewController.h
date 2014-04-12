@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLUserViewController : UIViewController <UIDocumentInteractionControllerDelegate>
+@interface SLUserViewController : UIViewController <UIDocumentInteractionControllerDelegate, UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UIButton *submitButton;
 @property (strong, nonatomic) NSURL * pdfUrl;

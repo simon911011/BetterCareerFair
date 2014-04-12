@@ -58,10 +58,14 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _resumes = [[NSMutableArray alloc] init];
     Firebase *f = [[Firebase alloc] initWithUrl:@"https://amber-fire-5695.firebaseio.com/testBeaconID2"];
     [f observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSDictionary* msgData = snapshot.value;
+        NSLog(@"Added resume for: %@", msgData[@"name"]);
         [_resumes addObject:msgData];
+        NSLog(@"%@", _resumes);
+        [self.tableView reloadData];
     }];
     
     // Uncomment the following line to preserve selection between presentations.
@@ -87,21 +91,40 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [_resumes count];
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+    UILabel *nameLabel = (UILabel *)[cell viewWithTag:0];
+    nameLabel.text = [[_resumes objectAtIndex:indexPath.row] objectForKey:@"name"];
     
     // Configure the cell...
     
     return cell;
 }
-*/
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSDictionary *dictionary = [_resumes objectAtIndex:indexPath.row];
+    NSString *pdfString = [dictionary objectForKey:@"data"];
+    
+    NSData * decodedData = [[NSData alloc] initWithBase64EncodedString:pdfString options:0];
+    
+    NSString * documentsDirectory = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES)[0];
+    
+    NSString * path = [documentsDirectory stringByAppendingPathComponent:@"test.pdf"];
+    [decodedData writeToFile:path atomically:YES];
+    
+    UIDocumentInteractionController *docController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:path]];
+    docController.delegate = self;
+    docController.UTI = @"com.adobe.pdf";
+    [docController presentPreviewAnimated:YES];
+}
+
 
 /*
 // Override to support conditional editing of the table view.
@@ -151,5 +174,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

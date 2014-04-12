@@ -21,8 +21,8 @@
  sourceApplication:(NSString *)sourceApplication
         annotation:(id)annotation {
     if (url != nil && [url isFileURL]) {
-        [(UITabBarController *)self.window.rootViewController setSelectedIndex:2];
-        [[(UITabBarController *)self.window.rootViewController childViewControllers][2] handleDocumentOpenURL:url];
+        [(UITabBarController *)self.window.rootViewController setSelectedIndex:1];
+        [[(UITabBarController *)self.window.rootViewController childViewControllers][1] handleDocumentOpenURL:url];
     }
     return YES;
 }

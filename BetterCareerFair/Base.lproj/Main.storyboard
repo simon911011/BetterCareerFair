@@ -24,7 +24,7 @@
             </objects>
             <point key="canvasLocation" x="-579" y="177"/>
         </scene>
-        <!--Main Table View Controller - Item-->
+        <!--Main Table View Controller - Main-->
         <scene sceneID="9aO-Cb-Lwg">
             <objects>
                 <tableViewController id="XKN-v1-YXy" customClass="SLMainTableViewController" sceneMemberID="viewController">
@@ -33,12 +33,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="bbG-MI-ZTo">
+                            <tableViewCell contentMode="scaleToFill" restorationIdentifier="Cell" selectionStyle="blue" accessoryType="detailButton" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="bbG-MI-ZTo">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bbG-MI-ZTo" id="LgR-Gv-BEi">
-                                    <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="273" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fkh-wI-P0R">
+                                            <rect key="frame" x="20" y="11" width="216" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -47,13 +56,13 @@
                             <outlet property="delegate" destination="XKN-v1-YXy" id="9gw-SX-Tvr"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="buP-S3-306"/>
+                    <tabBarItem key="tabBarItem" title="Main" id="buP-S3-306"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBV-Hz-zwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-105" y="-92"/>
         </scene>
-        <!--View Controller - Item 2-->
+        <!--View Controller - Sign In-->
         <scene sceneID="ayn-fk-HLe">
             <objects>
                 <viewController id="Vyc-Er-XFe" sceneMemberID="viewController">
@@ -66,7 +75,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Item 2" id="poR-Hc-j9g"/>
+                    <tabBarItem key="tabBarItem" title="Sign In" id="poR-Hc-j9g"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y6-JK-t1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

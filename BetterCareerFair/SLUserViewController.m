@@ -32,6 +32,7 @@
     [super viewDidLoad];
     NSLog(@"View Did load");
     f = [[Firebase alloc] initWithUrl:@"https://amber-fire-5695.firebaseio.com/testBeaconID2"];
+    _emailField.delegate = self;
     // Do any additional setup after loading the view.
 }
 
@@ -39,6 +40,13 @@
 {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)theTextField {
+    if (theTextField == _emailField) {
+        [theTextField resignFirstResponder];
+    }
+    return YES;
 }
 
 - (IBAction)sendResume:(id)sender

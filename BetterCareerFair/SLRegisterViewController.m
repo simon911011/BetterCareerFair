@@ -33,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     self.companyName.delegate = self;
     _nearbyBeacons = [[NSMutableDictionary alloc] init];
     self.visitManager = [FYXVisitManager new];
@@ -116,5 +118,11 @@
     
     Firebase * f = [[Firebase alloc] initWithUrl:@"https://company-id.firebaseIO.com/"];
     [[f childByAppendingPath:beaconName] setValue:name];
+    
+    NSUserDefaults *persistence = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObject: beaconName forKey: @"beaconKey"];
+    
+    [persistence registerDefaults:dict];
 }
 @end

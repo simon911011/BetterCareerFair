@@ -61,12 +61,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBV-Hz-zwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-105" y="-92"/>
+            <point key="canvasLocation" x="-45" y="-570"/>
         </scene>
-        <!--View Controller - Sign In-->
+        <!--Register View Controller - Register-->
         <scene sceneID="ayn-fk-HLe">
             <objects>
-                <viewController id="Vyc-Er-XFe" sceneMemberID="viewController">
+                <viewController id="Vyc-Er-XFe" customClass="SLRegisterViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="82x-Mm-UOG"/>
                         <viewControllerLayoutGuide type="bottom" id="S7g-5o-2Nw"/>
@@ -74,13 +74,42 @@
                     <view key="view" contentMode="scaleToFill" id="MHc-Zb-qYh">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0k2-ME-SJj">
+                                <rect key="frame" x="112" y="269" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KH1-HZ-qkU">
+                                <rect key="frame" x="137" y="307" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="submit:" destination="Vyc-Er-XFe" eventType="touchUpInside" id="OFl-On-mdL"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Place beacon above." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WkY-Ae-Gd0">
+                                <rect key="frame" x="80" y="106" width="161" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Sign In" id="poR-Hc-j9g"/>
+                    <tabBarItem key="tabBarItem" title="Register" id="poR-Hc-j9g"/>
+                    <connections>
+                        <outlet property="companyName" destination="0k2-ME-SJj" id="DN6-Hi-XaF"/>
+                        <outlet property="submit" destination="KH1-HZ-qkU" id="IlF-ew-yoD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y6-JK-t1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-122" y="588"/>
+            <point key="canvasLocation" x="467" y="502"/>
         </scene>
         <!--Table View Controller - what-->
         <scene sceneID="jbo-ue-7lb">
@@ -109,7 +138,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="YGj-b9-jb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-988" y="849"/>
+            <point key="canvasLocation" x="-45" y="877"/>
         </scene>
         <!--User View Controller - User-->
         <scene sceneID="GZI-Ys-d5E">
@@ -158,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9q3-Ci-ojV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-357" y="1082"/>
+            <point key="canvasLocation" x="467" y="-206"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

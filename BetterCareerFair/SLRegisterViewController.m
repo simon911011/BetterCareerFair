@@ -107,7 +107,7 @@
     
     NSDictionary *visitInfo = _nearbyBeacons[_keys[0]]; // Grab the closest beacon.
     FYXVisit *visit = visitInfo[@"visit"];
-    NSString * beaconName = visit.transmitter.name;
+    NSString * beaconName = visit.transmitter.identifier;
     
     NSString * product = [NSString stringWithFormat:@"Company: %@, Beacon Key %@", name, beaconName];
    

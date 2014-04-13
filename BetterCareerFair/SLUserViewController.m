@@ -109,19 +109,26 @@
 
 - (IBAction)sendResume:(id)sender
 {
-    _shouldUpdate = NO;
-    if (!_selectedFromTable) {
-        FYXVisit *topVisit = _nearbyBeacons[_keys[0]][@"visit"];
-        _companyID = topVisit.transmitter.identifier;
+    if ([_emailField.text isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Whoa" message:@"Name is empty" delegate:nil cancelButtonTitle:@"Got it." otherButtonTitles:nil];
+        [alert show];
+    } else {
+        _shouldUpdate = NO;
+        if (!_selectedFromTable) {
+            FYXVisit *topVisit = _nearbyBeacons[_keys[0]][@"visit"];
+            _companyID = topVisit.transmitter.identifier;
+        }
+        
+        _f = [[Firebase alloc] initWithUrl:[@"https://bettercareerfair.firebaseio.com/" stringByAppendingString: _companyID]];
+        NSData *pdfData = [NSData dataWithContentsOfURL:_pdfUrl];
+        NSString *pdfString = [pdfData base64EncodedStringWithOptions:0];
+        Firebase *pushRef = [_f childByAutoId];
+        [pushRef setValue:@{@"name": _emailField.text, @"data": pdfString}];
+        _shouldUpdate = YES;
+        _selectedFromTable = NO;
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Congrats" message:@"Resume is sent!" delegate:nil cancelButtonTitle:@"Aye" otherButtonTitles:nil];
+        [alert show];
     }
-    NSLog(@"URL: %@", [@"https://bettercareerfair.firebaseio.com/" stringByAppendingString:_companyID]);
-    _f = [[Firebase alloc] initWithUrl:[@"https://bettercareerfair.firebaseio.com/" stringByAppendingString: _companyID]];
-    NSData *pdfData = [NSData dataWithContentsOfURL:_pdfUrl];
-    NSString *pdfString = [pdfData base64EncodedStringWithOptions:0];
-    Firebase *pushRef = [_f childByAutoId];
-    [pushRef setValue:@{@"name": _emailField.text, @"data": pdfString}];
-    _shouldUpdate = YES;
-    _selectedFromTable = NO;
 }
 
 #pragma mark - Document Handle
@@ -160,6 +167,10 @@
     _shouldUpdate = NO;
     _selectedFromTable = YES;
     _companyID = beaconId;
+    Firebase *f = [[Firebase alloc] initWithUrl:[@"https://company-id.firebaseio.com/" stringByAppendingString:beaconId]];
+    [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+        _companyLabel.text = snapshot.value;
+    }];
     NSLog(@"Assigned ID: %@", _companyID);
 }
 

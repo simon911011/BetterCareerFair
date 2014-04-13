@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     _companyNames = [[NSMutableArray alloc] init];
-    for (NSString *key in _nearbyBeacons) {
+    for (NSString *key in _keys) {
         FYXVisit *visit = _nearbyBeacons[key][@"visit"];
         NSString *beaconId = visit.transmitter.identifier;
         Firebase *f = [[Firebase alloc] initWithUrl:[@"https://company-id.firebaseio.com/" stringByAppendingString:beaconId]];
@@ -42,8 +42,7 @@
             [_companyNames addObject:data];
             [self.tableView reloadData];
         }];
-    }
-    
+    }    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     

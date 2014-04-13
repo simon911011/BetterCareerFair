@@ -57,6 +57,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.navigationController.navigationBar.translucent = NO;
+
+    
     _resumes = [[NSMutableArray alloc] init];
     
     NSString *beaconId = [[NSUserDefaults standardUserDefaults] stringForKey:@"beaconKey"];
@@ -66,6 +69,7 @@
         [_resumes addObject:msgData];
         [self.tableView reloadData];
     }];
+
     
     // Uncomment the 6937e3004af1517657cdd60e62603c35a13bce22 line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;

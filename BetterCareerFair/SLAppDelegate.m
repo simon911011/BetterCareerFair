@@ -18,6 +18,7 @@
     [options setObject:[NSString stringWithString:FYXHighAccuracyLocation] forKey:FYXLocationModeKey];
     [FYX enableLocationUpdatesWithOptions:options];
     [FYX startService:self];
+    self.window.tintColor = [UIColor redColor];
     return YES;
 }
 

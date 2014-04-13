@@ -34,7 +34,6 @@
 {
     [super viewDidLoad];
     
-    
     self.companyName.delegate = self;
     _nearbyBeacons = [[NSMutableDictionary alloc] init];
     self.visitManager = [FYXVisitManager new];
@@ -106,21 +105,23 @@
 // Send the company name and closest beacon name to the firebase
 - (IBAction)submit:(id)sender {
     NSString * name = _companyName.text;
-    
-    NSDictionary *visitInfo = _nearbyBeacons[_keys[0]]; // Grab the closest beacon.
-    FYXVisit *visit = visitInfo[@"visit"];
-    NSString * beaconName = visit.transmitter.identifier;
-    
-    NSString * product = [NSString stringWithFormat:@"Company: %@, Beacon Key %@", name, beaconName];
-   
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Result" message:product delegate:nil cancelButtonTitle:@"Yeah!" otherButtonTitles:nil];
-    [alert show];
-    
-    Firebase * f = [[Firebase alloc] initWithUrl:@"https://company-id.firebaseIO.com/"];
+    if ([name isEqualToString:@""]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Whoa" message:@"Name is empty" delegate:nil cancelButtonTitle:@"Got it." otherButtonTitles:nil];
+        [alert show];
+    } else {
+        NSDictionary *visitInfo = _nearbyBeacons[_keys[0]]; // Grab the closest beacon.
+        FYXVisit *visit = visitInfo[@"visit"];
+      
+        Firebase * f = [[Firebase alloc] initWithUrl:@"https://company-id.firebaseIO.com/"];
 
-    [[f childByAppendingPath:visit.transmitter.identifier] setValue:name];
-    
-    [[NSUserDefaults standardUserDefaults] setObject:visit.transmitter.identifier forKey:@"beaconKey"];
-    [[NSUserDefaults standardUserDefaults] synchronize];
+        [[f childByAppendingPath:visit.transmitter.identifier] setValue:name];
+        
+        [[NSUserDefaults standardUserDefaults] setObject:visit.transmitter.identifier forKey:@"beaconKey"];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        NSString *response = [NSString stringWithFormat:@"%@ has been registered with %@", name, visit.transmitter.identifier];
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Success" message:response delegate:nil cancelButtonTitle:@"Cool" otherButtonTitles:nil];
+        [alert show];
+    }
 }
 @end

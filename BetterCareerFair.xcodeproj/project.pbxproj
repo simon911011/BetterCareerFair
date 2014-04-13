@@ -19,6 +19,10 @@
 		664C9DCB18FA4DAA00E04AD7 /* ContextLocation.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 664C9DC618FA4DAA00E04AD7 /* ContextLocation.embeddedframework */; };
 		664C9DCC18FA4DAA00E04AD7 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C9DC718FA4DAA00E04AD7 /* FYX.framework */; };
 		664C9DCD18FA4DAA00E04AD7 /* NetworkServices.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 664C9DC818FA4DAA00E04AD7 /* NetworkServices.embeddedframework */; };
+		66A13DF418FAB9CB006B8BF3 /* underline.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A13DF318FAB9CB006B8BF3 /* underline.png */; };
+		66A13DF618FABCA3006B8BF3 /* key.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A13DF518FABCA3006B8BF3 /* key.png */; };
+		66A13DF918FABDC0006B8BF3 /* note.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A13DF718FABDC0006B8BF3 /* note.png */; };
+		66A13DFA18FABDC0006B8BF3 /* users.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A13DF818FABDC0006B8BF3 /* users.png */; };
 		66DB3D2C18FA4E200037B3DC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D2B18FA4E200037B3DC /* Common.framework */; };
 		66DB3D2E18FA4E240037B3DC /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D2D18FA4E240037B3DC /* ContextCore.framework */; };
 		66DB3D3018FA4E2A0037B3DC /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D2F18FA4E2A0037B3DC /* ContextLocation.framework */; };
@@ -72,6 +76,10 @@
 		664C9DC618FA4DAA00E04AD7 /* ContextLocation.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ContextLocation.embeddedframework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextLocation.embeddedframework; sourceTree = "<group>"; };
 		664C9DC718FA4DAA00E04AD7 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/FYX.framework; sourceTree = "<group>"; };
 		664C9DC818FA4DAA00E04AD7 /* NetworkServices.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NetworkServices.embeddedframework; path = ../gimbalsdk_1.16.1_ios/Frameworks/NetworkServices.embeddedframework; sourceTree = "<group>"; };
+		66A13DF318FAB9CB006B8BF3 /* underline.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = underline.png; sourceTree = "<group>"; };
+		66A13DF518FABCA3006B8BF3 /* key.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = key.png; sourceTree = "<group>"; };
+		66A13DF718FABDC0006B8BF3 /* note.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = note.png; sourceTree = "<group>"; };
+		66A13DF818FABDC0006B8BF3 /* users.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = users.png; sourceTree = "<group>"; };
 		66DB3D2B18FA4E200037B3DC /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/Common.embeddedframework/Common.framework; sourceTree = "<group>"; };
 		66DB3D2D18FA4E240037B3DC /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextCore.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextCore.embeddedframework/ContextCore.framework; sourceTree = "<group>"; };
 		66DB3D2F18FA4E2A0037B3DC /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextLocation.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextLocation.embeddedframework/ContextLocation.framework; sourceTree = "<group>"; };
@@ -197,6 +205,10 @@
 		66DB8FFB18F936250072ADD0 /* BetterCareerFair */ = {
 			isa = PBXGroup;
 			children = (
+				66A13DF718FABDC0006B8BF3 /* note.png */,
+				66A13DF818FABDC0006B8BF3 /* users.png */,
+				66A13DF518FABCA3006B8BF3 /* key.png */,
+				66A13DF318FAB9CB006B8BF3 /* underline.png */,
 				664C9D8E18FA478400E04AD7 /* SLRegisterViewController.h */,
 				664C9D8F18FA478400E04AD7 /* SLRegisterViewController.m */,
 				66DB900418F936250072ADD0 /* SLAppDelegate.h */,
@@ -320,12 +332,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A13DF618FABCA3006B8BF3 /* key.png in Resources */,
+				66A13DF918FABDC0006B8BF3 /* note.png in Resources */,
 				664C9DCA18FA4DAA00E04AD7 /* ContextCore.embeddedframework in Resources */,
+				66A13DFA18FABDC0006B8BF3 /* users.png in Resources */,
 				664C9DCB18FA4DAA00E04AD7 /* ContextLocation.embeddedframework in Resources */,
 				66DB900E18F936250072ADD0 /* Images.xcassets in Resources */,
 				66DB900018F936250072ADD0 /* InfoPlist.strings in Resources */,
 				66DB900918F936250072ADD0 /* Main.storyboard in Resources */,
 				664C9DCD18FA4DAA00E04AD7 /* NetworkServices.embeddedframework in Resources */,
+				66A13DF418FAB9CB006B8BF3 /* underline.png in Resources */,
 				664C9DC918FA4DAA00E04AD7 /* Common.embeddedframework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

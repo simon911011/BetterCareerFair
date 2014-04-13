@@ -8,6 +8,8 @@
 
 #import "SLRegisterViewController.h"
 #import <Firebase/Firebase.h>
+#import <FYX/FYXSightingManager.h>
+
 
 @interface SLRegisterViewController (){
     NSArray *_keys;
@@ -36,6 +38,12 @@
     self.visitManager = [FYXVisitManager new];
     self.visitManager.delegate = self;
     [self.visitManager start];
+    NSMutableDictionary *options = [NSMutableDictionary new];
+    [options setObject:[NSNumber numberWithInt:5] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
+    [options setObject:[NSNumber numberWithInt:FYXSightingOptionSignalStrengthWindowNone] forKey:FYXSightingOptionSignalStrengthWindowKey];
+    [options setObject:[NSNumber numberWithInt:-70] forKey:FYXVisitOptionArrivalRSSIKey];
+    [options setObject:[NSNumber numberWithInt:-90] forKey:FYXVisitOptionDepartureRSSIKey];
+    [self.visitManager startWithOptions:options];
 }
 
 - (void)didReceiveMemoryWarning
@@ -72,9 +80,6 @@
         }
         return (NSComparisonResult)NSOrderedSame;
     }];
-    visitInfo = _nearbyBeacons[_keys[0]]; // Grab the closest beacon.
-    FYXVisit *topVisit = visitInfo[@"visit"];
-    NSString * beaconName = topVisit.transmitter.name;
 }
 
 - (void)didArrive:(FYXVisit *)visit;

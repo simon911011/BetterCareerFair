@@ -13,8 +13,14 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+<<<<<<< HEAD
     // Override point for customization after application launch.
     [FYX setAppId:@"7de3a00129e74dcd6f8774f412d3015064ada5c75dbbe28f8f8f15c81fcb7248" appSecret:@"b32e6d834b3e8f6ebe3a54d5352f422492314c8ab200cd3876c63d77ddf3c468" callbackUrl:@"test-gimbal://authcode"];
+=======
+    [FYX setAppId:@"7de3a00129e74dcd6f8774f412d3015064ada5c75dbbe28f8f8f15c81fcb7248"
+        appSecret:@"b32e6d834b3e8f6ebe3a54d5352f422492314c8ab200cd3876c63d77ddf3c468"
+      callbackUrl:@"test-gimbal://authcode"];
+>>>>>>> bb90ae1afdce99078770028628085566078cbb47
     NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
     [options setObject:[NSString stringWithString:FYXHighAccuracyLocation] forKey:FYXLocationModeKey];
     [FYX enableLocationUpdatesWithOptions:options];
@@ -59,6 +65,19 @@
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+- (void)serviceStarted
+{
+    // this will be invoked if the service has successfully started
+    // bluetooth scanning will be started at this point.
+    NSLog(@"FYX Service Successfully Started");
+}
+
+- (void)startServiceFailed:(NSError *)error
+{
+    // this will be called if the service has failed to start
+    NSLog(@"%@", error);
+}
+
 - (void)serviceStarted
 {
     // this will be invoked if the service has successfully started

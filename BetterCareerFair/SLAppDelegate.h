@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import <FYX/FYX.h>
 #import "SLUserViewController.h"
+#import <FYX/FYX.h>
 
 @interface SLAppDelegate : UIResponder <UIApplicationDelegate, FYXServiceDelegate>
 

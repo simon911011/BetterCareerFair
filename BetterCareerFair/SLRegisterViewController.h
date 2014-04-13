@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FYX/FYXVisitManager.h>
 
-@interface SLRegisterViewController : UIViewController
+@interface SLRegisterViewController : UIViewController <FYXVisitDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *companyName;
 @property (weak, nonatomic) IBOutlet UIButton *submit;
 - (IBAction)submit:(id)sender;

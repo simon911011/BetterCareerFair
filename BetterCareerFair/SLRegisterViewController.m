@@ -117,19 +117,10 @@
     [alert show];
     
     Firebase * f = [[Firebase alloc] initWithUrl:@"https://company-id.firebaseIO.com/"];
-<<<<<<< HEAD
+
     [[f childByAppendingPath:visit.transmitter.identifier] setValue:name];
     
     [[NSUserDefaults standardUserDefaults] setObject:visit.transmitter.identifier forKey:@"beaconKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
-=======
-    [[f childByAppendingPath:beaconName] setValue:name];
-    
-    NSUserDefaults *persistence = [NSUserDefaults standardUserDefaults];
-    
-    NSDictionary *dict = [NSDictionary dictionaryWithObject: beaconName forKey: @"beaconKey"];
-    
-    [persistence registerDefaults:dict];
->>>>>>> 8dc9852b14f15e4d10b3b0851f3b349e2faa5174
 }
 @end

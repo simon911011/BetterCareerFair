@@ -9,6 +9,22 @@
 /* Begin PBXBuildFile section */
 		662B265318F95B7D003AFF5A /* SLUserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 662B265218F95B7D003AFF5A /* SLUserViewController.m */; };
 		664C9D1A18F9A0E600E04AD7 /* SLMainTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664C9D1918F9A0E600E04AD7 /* SLMainTableViewController.m */; };
+		664C9D9018FA478400E04AD7 /* SLRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 664C9D8F18FA478400E04AD7 /* SLRegisterViewController.m */; };
+		664C9D9518FA4B0D00E04AD7 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C9D9418FA4B0D00E04AD7 /* CoreBluetooth.framework */; };
+		664C9D9718FA4B1E00E04AD7 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C9D9618FA4B1E00E04AD7 /* MapKit.framework */; };
+		664C9D9918FA4B2400E04AD7 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C9D9818FA4B2300E04AD7 /* CoreData.framework */; };
+		664C9D9B18FA4B9A00E04AD7 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C9D9A18FA4B9A00E04AD7 /* CoreLocation.framework */; };
+		664C9DC918FA4DAA00E04AD7 /* Common.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 664C9DC418FA4DAA00E04AD7 /* Common.embeddedframework */; };
+		664C9DCA18FA4DAA00E04AD7 /* ContextCore.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 664C9DC518FA4DAA00E04AD7 /* ContextCore.embeddedframework */; };
+		664C9DCB18FA4DAA00E04AD7 /* ContextLocation.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 664C9DC618FA4DAA00E04AD7 /* ContextLocation.embeddedframework */; };
+		664C9DCC18FA4DAA00E04AD7 /* FYX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 664C9DC718FA4DAA00E04AD7 /* FYX.framework */; };
+		664C9DCD18FA4DAA00E04AD7 /* NetworkServices.embeddedframework in Resources */ = {isa = PBXBuildFile; fileRef = 664C9DC818FA4DAA00E04AD7 /* NetworkServices.embeddedframework */; };
+		66DB3D2C18FA4E200037B3DC /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D2B18FA4E200037B3DC /* Common.framework */; };
+		66DB3D2E18FA4E240037B3DC /* ContextCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D2D18FA4E240037B3DC /* ContextCore.framework */; };
+		66DB3D3018FA4E2A0037B3DC /* ContextLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D2F18FA4E2A0037B3DC /* ContextLocation.framework */; };
+		66DB3D3418FA4EE20037B3DC /* NetworkServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D3318FA4EE20037B3DC /* NetworkServices.framework */; };
+		66DB3D3618FA4F380037B3DC /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB3D3518FA4F380037B3DC /* libz.dylib */; };
+		66DB3D3918FA72FA0037B3DC /* SLCompanySelectTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66DB3D3818FA72FA0037B3DC /* SLCompanySelectTableViewController.m */; };
 		66DB8FF618F936250072ADD0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB8FF518F936250072ADD0 /* Foundation.framework */; };
 		66DB8FF818F936250072ADD0 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB8FF718F936250072ADD0 /* CoreGraphics.framework */; };
 		66DB8FFA18F936250072ADD0 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 66DB8FF918F936250072ADD0 /* UIKit.framework */; };
@@ -45,6 +61,24 @@
 		662B265218F95B7D003AFF5A /* SLUserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLUserViewController.m; sourceTree = "<group>"; };
 		664C9D1818F9A0E600E04AD7 /* SLMainTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLMainTableViewController.h; sourceTree = "<group>"; };
 		664C9D1918F9A0E600E04AD7 /* SLMainTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLMainTableViewController.m; sourceTree = "<group>"; };
+		664C9D8E18FA478400E04AD7 /* SLRegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLRegisterViewController.h; sourceTree = "<group>"; };
+		664C9D8F18FA478400E04AD7 /* SLRegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLRegisterViewController.m; sourceTree = "<group>"; };
+		664C9D9418FA4B0D00E04AD7 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		664C9D9618FA4B1E00E04AD7 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		664C9D9818FA4B2300E04AD7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		664C9D9A18FA4B9A00E04AD7 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		664C9DC418FA4DAA00E04AD7 /* Common.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Common.embeddedframework; path = ../gimbalsdk_1.16.1_ios/Frameworks/Common.embeddedframework; sourceTree = "<group>"; };
+		664C9DC518FA4DAA00E04AD7 /* ContextCore.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ContextCore.embeddedframework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextCore.embeddedframework; sourceTree = "<group>"; };
+		664C9DC618FA4DAA00E04AD7 /* ContextLocation.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = ContextLocation.embeddedframework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextLocation.embeddedframework; sourceTree = "<group>"; };
+		664C9DC718FA4DAA00E04AD7 /* FYX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FYX.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/FYX.framework; sourceTree = "<group>"; };
+		664C9DC818FA4DAA00E04AD7 /* NetworkServices.embeddedframework */ = {isa = PBXFileReference; lastKnownFileType = folder; name = NetworkServices.embeddedframework; path = ../gimbalsdk_1.16.1_ios/Frameworks/NetworkServices.embeddedframework; sourceTree = "<group>"; };
+		66DB3D2B18FA4E200037B3DC /* Common.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Common.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/Common.embeddedframework/Common.framework; sourceTree = "<group>"; };
+		66DB3D2D18FA4E240037B3DC /* ContextCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextCore.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextCore.embeddedframework/ContextCore.framework; sourceTree = "<group>"; };
+		66DB3D2F18FA4E2A0037B3DC /* ContextLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContextLocation.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/ContextLocation.embeddedframework/ContextLocation.framework; sourceTree = "<group>"; };
+		66DB3D3318FA4EE20037B3DC /* NetworkServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkServices.framework; path = ../gimbalsdk_1.16.1_ios/Frameworks/NetworkServices.embeddedframework/NetworkServices.framework; sourceTree = "<group>"; };
+		66DB3D3518FA4F380037B3DC /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		66DB3D3718FA72FA0037B3DC /* SLCompanySelectTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLCompanySelectTableViewController.h; sourceTree = "<group>"; };
+		66DB3D3818FA72FA0037B3DC /* SLCompanySelectTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLCompanySelectTableViewController.m; sourceTree = "<group>"; };
 		66DB8FF218F936250072ADD0 /* BetterCareerFair.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BetterCareerFair.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66DB8FF518F936250072ADD0 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		66DB8FF718F936250072ADD0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -75,6 +109,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DB3D3618FA4F380037B3DC /* libz.dylib in Frameworks */,
+				66DB3D3418FA4EE20037B3DC /* NetworkServices.framework in Frameworks */,
+				66DB3D3018FA4E2A0037B3DC /* ContextLocation.framework in Frameworks */,
+				66DB3D2E18FA4E240037B3DC /* ContextCore.framework in Frameworks */,
+				66DB3D2C18FA4E200037B3DC /* Common.framework in Frameworks */,
+				664C9D9B18FA4B9A00E04AD7 /* CoreLocation.framework in Frameworks */,
+				664C9D9918FA4B2400E04AD7 /* CoreData.framework in Frameworks */,
+				664C9D9718FA4B1E00E04AD7 /* MapKit.framework in Frameworks */,
+				664C9D9518FA4B0D00E04AD7 /* CoreBluetooth.framework in Frameworks */,
+				664C9DCC18FA4DAA00E04AD7 /* FYX.framework in Frameworks */,
 				66DB903518F941930072ADD0 /* SystemConfiguration.framework in Frameworks */,
 				66DB903318F941880072ADD0 /* Security.framework in Frameworks */,
 				66DB903118F941820072ADD0 /* CFNetwork.framework in Frameworks */,
@@ -122,6 +166,20 @@
 		66DB8FF418F936250072ADD0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				66DB3D3518FA4F380037B3DC /* libz.dylib */,
+				66DB3D3318FA4EE20037B3DC /* NetworkServices.framework */,
+				66DB3D2F18FA4E2A0037B3DC /* ContextLocation.framework */,
+				66DB3D2D18FA4E240037B3DC /* ContextCore.framework */,
+				66DB3D2B18FA4E200037B3DC /* Common.framework */,
+				664C9DC418FA4DAA00E04AD7 /* Common.embeddedframework */,
+				664C9DC518FA4DAA00E04AD7 /* ContextCore.embeddedframework */,
+				664C9DC618FA4DAA00E04AD7 /* ContextLocation.embeddedframework */,
+				664C9DC718FA4DAA00E04AD7 /* FYX.framework */,
+				664C9DC818FA4DAA00E04AD7 /* NetworkServices.embeddedframework */,
+				664C9D9A18FA4B9A00E04AD7 /* CoreLocation.framework */,
+				664C9D9818FA4B2300E04AD7 /* CoreData.framework */,
+				664C9D9618FA4B1E00E04AD7 /* MapKit.framework */,
+				664C9D9418FA4B0D00E04AD7 /* CoreBluetooth.framework */,
 				66DB903418F941930072ADD0 /* SystemConfiguration.framework */,
 				66DB903218F941880072ADD0 /* Security.framework */,
 				66DB903018F941820072ADD0 /* CFNetwork.framework */,
@@ -139,6 +197,8 @@
 		66DB8FFB18F936250072ADD0 /* BetterCareerFair */ = {
 			isa = PBXGroup;
 			children = (
+				664C9D8E18FA478400E04AD7 /* SLRegisterViewController.h */,
+				664C9D8F18FA478400E04AD7 /* SLRegisterViewController.m */,
 				66DB900418F936250072ADD0 /* SLAppDelegate.h */,
 				66DB900518F936250072ADD0 /* SLAppDelegate.m */,
 				66DB900718F936250072ADD0 /* Main.storyboard */,
@@ -148,6 +208,8 @@
 				662B265218F95B7D003AFF5A /* SLUserViewController.m */,
 				664C9D1818F9A0E600E04AD7 /* SLMainTableViewController.h */,
 				664C9D1918F9A0E600E04AD7 /* SLMainTableViewController.m */,
+				66DB3D3718FA72FA0037B3DC /* SLCompanySelectTableViewController.h */,
+				66DB3D3818FA72FA0037B3DC /* SLCompanySelectTableViewController.m */,
 			);
 			path = BetterCareerFair;
 			sourceTree = "<group>";
@@ -258,9 +320,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				664C9DCA18FA4DAA00E04AD7 /* ContextCore.embeddedframework in Resources */,
+				664C9DCB18FA4DAA00E04AD7 /* ContextLocation.embeddedframework in Resources */,
 				66DB900E18F936250072ADD0 /* Images.xcassets in Resources */,
 				66DB900018F936250072ADD0 /* InfoPlist.strings in Resources */,
 				66DB900918F936250072ADD0 /* Main.storyboard in Resources */,
+				664C9DCD18FA4DAA00E04AD7 /* NetworkServices.embeddedframework in Resources */,
+				664C9DC918FA4DAA00E04AD7 /* Common.embeddedframework in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +345,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66DB3D3918FA72FA0037B3DC /* SLCompanySelectTableViewController.m in Sources */,
+				664C9D9018FA478400E04AD7 /* SLRegisterViewController.m in Sources */,
 				66DB900218F936250072ADD0 /* main.m in Sources */,
 				664C9D1A18F9A0E600E04AD7 /* SLMainTableViewController.m in Sources */,
 				662B265318F95B7D003AFF5A /* SLUserViewController.m in Sources */,
@@ -410,13 +478,20 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/Common.embeddedframework,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/ContextCore.embeddedframework,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/ContextLocation.embeddedframework,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BetterCareerFair/BetterCareerFair-Prefix.pch";
 				INFOPLIST_FILE = "BetterCareerFair/BetterCareerFair-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -429,6 +504,11 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/Common.embeddedframework,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/ContextCore.embeddedframework,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/ContextLocation.embeddedframework,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks,
+					/Users/shaoping/Dev/iOS/gimbalsdk_1.16.1_ios/Frameworks/NetworkServices.embeddedframework,
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BetterCareerFair/BetterCareerFair-Prefix.pch";
@@ -436,6 +516,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

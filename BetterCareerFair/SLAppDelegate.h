@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FYX/FYX.h>
 #import "SLUserViewController.h"
 
-@interface SLAppDelegate : UIResponder <UIApplicationDelegate>
+@interface SLAppDelegate : UIResponder <UIApplicationDelegate, FYXServiceDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
 @property (strong, nonatomic) SLUserViewController *viewController;

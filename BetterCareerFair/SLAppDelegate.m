@@ -7,12 +7,18 @@
 //
 
 #import "SLAppDelegate.h"
+#import <FYX/FYX.h>
 
 @implementation SLAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
     // Override point for customization after application launch.
+    [FYX setAppId:@"7de3a00129e74dcd6f8774f412d3015064ada5c75dbbe28f8f8f15c81fcb7248" appSecret:@"b32e6d834b3e8f6ebe3a54d5352f422492314c8ab200cd3876c63d77ddf3c468" callbackUrl:@"test-gimbal://authcode"];
+    NSMutableDictionary *options = [[NSMutableDictionary alloc] init];
+    [options setObject:[NSString stringWithString:FYXHighAccuracyLocation] forKey:FYXLocationModeKey];
+    [FYX enableLocationUpdatesWithOptions:options];
+    [FYX startService:self];
     return YES;
 }
 
@@ -52,6 +58,18 @@
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+- (void)serviceStarted
+{
+    // this will be invoked if the service has successfully started
+    // bluetooth scanning will be started at this point.
+    NSLog(@"FYX Service Successfully Started");
+}
+
+- (void)startServiceFailed:(NSError *)error
+{
+    // this will be called if the service has failed to start
+    NSLog(@"%@", error);
 }
 
 @end

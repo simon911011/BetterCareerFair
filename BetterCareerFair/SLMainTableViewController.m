@@ -34,7 +34,6 @@
     [fire observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
         
         FDataSnapshot *child = [snapshot childSnapshotForPath:@"slee168"];
-        NSLog( @"The child: %@", child.value );
         
         NSData * decodedData = [[NSData alloc] initWithBase64EncodedString:child.value options:0];
         
@@ -62,13 +61,11 @@
     Firebase *f = [[Firebase alloc] initWithUrl:@"https://amber-fire-5695.firebaseio.com/testBeaconID2"];
     [f observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSDictionary* msgData = snapshot.value;
-        NSLog(@"Added resume for: %@", msgData[@"name"]);
         [_resumes addObject:msgData];
-        NSLog(@"%@", _resumes);
         [self.tableView reloadData];
     }];
     
-    // Uncomment the following line to preserve selection between presentations.
+    // Uncomment the 6937e3004af1517657cdd60e62603c35a13bce22 line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.

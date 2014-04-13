@@ -18,12 +18,11 @@
                         <segue destination="Vyc-Er-XFe" kind="relationship" relationship="viewControllers" id="E24-dt-lxJ"/>
                         <segue destination="xGA-DU-ZVy" kind="relationship" relationship="viewControllers" id="0Zs-Qt-JXE"/>
                         <segue destination="XKN-v1-YXy" kind="relationship" relationship="viewControllers" id="bTM-jB-6jM"/>
-                        <segue destination="YiN-PJ-4X3" kind="relationship" relationship="viewControllers" id="6nV-Ch-CdX"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vrj-yO-ThV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-579" y="177"/>
+            <point key="canvasLocation" x="-1247" y="67"/>
         </scene>
         <!--Main Table View Controller - Main-->
         <scene sceneID="9aO-Cb-Lwg">
@@ -61,7 +60,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hBV-Hz-zwT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="-570"/>
+            <point key="canvasLocation" x="-713" y="-680"/>
         </scene>
         <!--Register View Controller - Register-->
         <scene sceneID="ayn-fk-HLe">
@@ -109,36 +108,44 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2Y6-JK-t1X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="502"/>
+            <point key="canvasLocation" x="-201" y="392"/>
         </scene>
-        <!--Table View Controller - what-->
-        <scene sceneID="jbo-ue-7lb">
+        <!--Company Select Table View Controller-->
+        <scene sceneID="3o3-Vq-MB7">
             <objects>
-                <tableViewController id="YiN-PJ-4X3" sceneMemberID="viewController">
-                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="CPR-u2-xdb">
+                <tableViewController id="qxr-Fj-cwP" customClass="SLCompanySelectTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="o7O-Kd-eKa">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="gWj-lc-xTL">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BeaconCell" id="QPA-93-WsJ">
                                 <rect key="frame" x="0.0" y="22" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="gWj-lc-xTL" id="9rQ-bO-3AM">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QPA-93-WsJ" id="w7T-xg-gPC">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcW-bn-T5p">
+                                            <rect key="frame" x="20" y="11" width="280" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
                         <connections>
-                            <outlet property="dataSource" destination="YiN-PJ-4X3" id="qlg-Q6-qS2"/>
-                            <outlet property="delegate" destination="YiN-PJ-4X3" id="EF8-dB-h89"/>
+                            <outlet property="dataSource" destination="qxr-Fj-cwP" id="3LU-gt-NJP"/>
+                            <outlet property="delegate" destination="qxr-Fj-cwP" id="KVP-IH-pzE"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="what" id="B7i-S1-s5j"/>
+                    <navigationItem key="navigationItem" id="K6p-aT-bp7"/>
                 </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YGj-b9-jb2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OmF-WQ-c9G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-45" y="877"/>
+            <point key="canvasLocation" x="370" y="-327"/>
         </scene>
         <!--User View Controller - User-->
         <scene sceneID="GZI-Ys-d5E">
@@ -152,42 +159,65 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMa-dJ-Xqu">
-                                <rect key="frame" x="61" y="74" width="198" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Email" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="XMa-dJ-Xqu">
+                                <rect key="frame" x="20" y="52" width="280" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpA-bx-pKX">
-                                <rect key="frame" x="139" y="45" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMt-JE-iJ1">
-                                <rect key="frame" x="137" y="112" width="49" height="30"/>
+                                <rect key="frame" x="65" y="296" width="190" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Submit">
+                                <state key="normal" title="View All Nearby Companies">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="sendResume:" destination="xGA-DU-ZVy" eventType="touchUpInside" id="JLO-5p-MdS"/>
+                                    <segue destination="qxr-Fj-cwP" kind="modal" id="kzl-WH-Bjf"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Send resume to " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDe-JG-Pdf">
+                                <rect key="frame" x="97" y="113" width="127" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RcL-YO-ggJ">
+                                <rect key="frame" x="20" y="153" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Wrong company? " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tv0-WD-6vd">
+                                <rect key="frame" x="20" y="244" width="280" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="prN-zH-hbP">
+                                <rect key="frame" x="142" y="326" width="36" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="sendResume:" destination="xGA-DU-ZVy" eventType="touchUpInside" id="NSH-dF-na0"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="User" id="pst-tl-og1"/>
+                    <tabBarItem key="tabBarItem" title="Student" id="pst-tl-og1"/>
                     <navigationItem key="navigationItem" id="IUM-2L-DfD"/>
                     <connections>
+                        <outlet property="companyLabel" destination="RcL-YO-ggJ" id="0DM-Hl-0TQ"/>
                         <outlet property="emailField" destination="XMa-dJ-Xqu" id="rL9-jI-mZb"/>
-                        <outlet property="submitButton" destination="jMt-JE-iJ1" id="Vzx-gu-Y1Y"/>
+                        <outlet property="sendButton" destination="prN-zH-hbP" id="9vj-IE-UAz"/>
+                        <outlet property="viewTableButton" destination="jMt-JE-iJ1" id="eJ4-qB-on9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9q3-Ci-ojV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="467" y="-206"/>
+            <point key="canvasLocation" x="-201" y="-316"/>
         </scene>
     </scenes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <FYX/FYXVisitManager.h>
 
-@interface SLUserViewController : UIViewController <UIDocumentInteractionControllerDelegate, UITextFieldDelegate>
+@interface SLUserViewController : UIViewController <UIDocumentInteractionControllerDelegate, UITextFieldDelegate, FYXVisitDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
-@property (weak, nonatomic) IBOutlet UIButton *submitButton;
+@property (weak, nonatomic) IBOutlet UIButton *viewTableButton;
+@property (weak, nonatomic) IBOutlet UIButton *sendButton;
+@property (weak, nonatomic) IBOutlet UILabel *companyLabel;
 @property (strong, nonatomic) NSURL * pdfUrl;
 
 - (void)handleDocumentOpenURL: (NSURL *)url;

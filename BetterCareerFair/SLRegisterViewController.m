@@ -33,6 +33,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    
+    
     self.companyName.delegate = self;
     _nearbyBeacons = [[NSMutableDictionary alloc] init];
     self.visitManager = [FYXVisitManager new];
@@ -107,7 +109,7 @@
     
     NSDictionary *visitInfo = _nearbyBeacons[_keys[0]]; // Grab the closest beacon.
     FYXVisit *visit = visitInfo[@"visit"];
-    NSString * beaconName = visit.transmitter.name;
+    NSString * beaconName = visit.transmitter.identifier;
     
     NSString * product = [NSString stringWithFormat:@"Company: %@, Beacon Key %@", name, beaconName];
    
@@ -115,9 +117,19 @@
     [alert show];
     
     Firebase * f = [[Firebase alloc] initWithUrl:@"https://company-id.firebaseIO.com/"];
+<<<<<<< HEAD
     [[f childByAppendingPath:visit.transmitter.identifier] setValue:name];
     
     [[NSUserDefaults standardUserDefaults] setObject:visit.transmitter.identifier forKey:@"beaconKey"];
     [[NSUserDefaults standardUserDefaults] synchronize];
+=======
+    [[f childByAppendingPath:beaconName] setValue:name];
+    
+    NSUserDefaults *persistence = [NSUserDefaults standardUserDefaults];
+    
+    NSDictionary *dict = [NSDictionary dictionaryWithObject: beaconName forKey: @"beaconKey"];
+    
+    [persistence registerDefaults:dict];
+>>>>>>> 8dc9852b14f15e4d10b3b0851f3b349e2faa5174
 }
 @end

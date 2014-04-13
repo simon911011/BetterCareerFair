@@ -8,8 +8,11 @@
 
 #import "SLCompanySelectTableViewController.h"
 #import <FYX/FYXVisit.h>
+#import <Firebase/Firebase.h>
 
-@interface SLCompanySelectTableViewController ()
+@interface SLCompanySelectTableViewController ()  {
+    NSMutableArray *_companyNames;
+}
 
 @end
 
@@ -27,6 +30,19 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    _companyNames = [[NSMutableArray alloc] init];
+    for (NSString *key in _nearbyBeacons) {
+        FYXVisit *visit = _nearbyBeacons[key][@"visit"];
+        NSString *beaconId = visit.transmitter.identifier;
+        Firebase *f = [[Firebase alloc] initWithUrl:[@"https://company-id.firebaseio.com/" stringByAppendingString:beaconId]];
+        [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            NSString *data = snapshot.value;
+            NSLog(@"Data, %@", data);
+            
+            [_companyNames addObject:data];
+            [self.tableView reloadData];
+        }];
+    }
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -52,17 +68,27 @@
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     // Return the number of rows in the section.
-    return [_nearbyBeacons count];
+    return [_companyNames count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"BeaconCell"];
-    UILabel *companyName = (UILabel *)[cell viewWithTag:0];
-    FYXVisit *visit = _nearbyBeacons[_keys[indexPath.row]][@"visit"];
-    companyName.text = visit.transmitter.name;
+    UILabel *companyName = (UILabel *)[cell viewWithTag:1];
+    NSLog(@"companies: %@", _companyNames);
+    companyName.text = _companyNames[indexPath.row];
     
+
     return cell;
+}
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    FYXVisit *visit = _nearbyBeacons[_keys[indexPath.row]][@"visit"];
+    if ([_myDelegate respondsToSelector:@selector(companySelectDidFinishSelecting:)]) {
+        [_myDelegate companySelectDidFinishSelecting: visit.transmitter.identifier];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

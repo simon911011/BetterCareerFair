@@ -15,6 +15,9 @@
     UIDocumentInteractionController *_documentController;
     Firebase *_f;
     NSArray *_keys;
+    BOOL _shouldUpdate;
+    BOOL _selectedFromTable;
+    NSString *_companyID;
 }
 @property FYXVisitManager *visitManager;
 @property NSMutableDictionary *nearbyBeacons;
@@ -34,13 +37,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSLog(@"View Did load");
-    _f = [[Firebase alloc] initWithUrl:@"https://amber-fire-5695.firebaseio.com/testBeaconID2"];
     _emailField.delegate = self;
-    // Do any additional setup after loading the view.
+
     _nearbyBeacons = [[NSMutableDictionary alloc] init];
     _visitManager = [FYXVisitManager new];
     _visitManager.delegate = self;
+    
     NSMutableDictionary *options = [NSMutableDictionary new];
     [options setObject:[NSNumber numberWithInt:5] forKey:FYXVisitOptionDepartureIntervalInSecondsKey];
     [options setObject:[NSNumber numberWithInt:FYXSightingOptionSignalStrengthWindowNone] forKey:FYXSightingOptionSignalStrengthWindowKey];
@@ -48,6 +50,9 @@
     [options setObject:[NSNumber numberWithInt:-90] forKey:FYXVisitOptionDepartureRSSIKey];
     [self.visitManager startWithOptions:options];
     [_visitManager start];
+    
+    _shouldUpdate = YES;
+    _selectedFromTable = NO;
 }
 
 #pragma mark - Gimbal FYXVisitManager
@@ -59,22 +64,28 @@
 - (void)receivedSighting:(FYXVisit *)visit updateTime:(NSDate *)updateTime RSSI:(NSNumber *)RSSI;
 {
     // this will be invoked when an authorized transmitter is sighted during an on-going visit
-    NSLog(@"%@: %@", visit.transmitter.name, RSSI);
-    NSDictionary *visitInfo = @{@"visit": visit, @"rssi": RSSI};
-    [_nearbyBeacons setObject:visitInfo forKey:visit.transmitter.identifier];
-    
-    _keys = [_nearbyBeacons keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
-        NSDictionary *dict1 = (NSDictionary *)obj1;
-        NSDictionary *dict2 = (NSDictionary *)obj2;
-        if ([dict1[@"rssi"] integerValue]> [dict2[@"rssi"] integerValue]) {
-            return (NSComparisonResult)NSOrderedAscending;
-        } else if ([dict1[@"rssi"] integerValue] < [dict2[@"rssi"] integerValue]) {
-            return (NSComparisonResult)NSOrderedDescending;
-        }
-        return (NSComparisonResult)NSOrderedSame;
-    }];
-    FYXVisit *topVisit = _nearbyBeacons[_keys[0]][@"visit"];
-    _companyLabel.text = topVisit.transmitter.name;
+    if (_shouldUpdate) {
+        NSDictionary *visitInfo = @{@"visit": visit, @"rssi": RSSI};
+        [_nearbyBeacons setObject:visitInfo forKey:visit.transmitter.identifier];
+        
+        _keys = [_nearbyBeacons keysSortedByValueUsingComparator:^NSComparisonResult(id obj1, id obj2) {
+            NSDictionary *dict1 = (NSDictionary *)obj1;
+            NSDictionary *dict2 = (NSDictionary *)obj2;
+            if ([dict1[@"rssi"] integerValue]> [dict2[@"rssi"] integerValue]) {
+                return (NSComparisonResult)NSOrderedAscending;
+            } else if ([dict1[@"rssi"] integerValue] < [dict2[@"rssi"] integerValue]) {
+                return (NSComparisonResult)NSOrderedDescending;
+            }
+            return (NSComparisonResult)NSOrderedSame;
+        }];
+        FYXVisit *topVisit = _nearbyBeacons[_keys[0]][@"visit"];
+
+        Firebase *f = [[Firebase alloc] initWithUrl:[@"https://company-id.firebaseio.com/" stringByAppendingString:topVisit.transmitter.identifier]];
+        [f observeEventType:FEventTypeValue withBlock:^(FDataSnapshot *snapshot) {
+            _companyLabel.text = snapshot.value;
+        }];
+        
+    }
 }
 - (void)didDepart:(FYXVisit *)visit;
 {
@@ -98,11 +109,19 @@
 
 - (IBAction)sendResume:(id)sender
 {
+    _shouldUpdate = NO;
+    if (!_selectedFromTable) {
+        FYXVisit *topVisit = _nearbyBeacons[_keys[0]][@"visit"];
+        _companyID = topVisit.transmitter.identifier;
+    }
+    NSLog(@"URL: %@", [@"https://bettercareerfair.firebaseio.com/" stringByAppendingString:_companyID]);
+    _f = [[Firebase alloc] initWithUrl:[@"https://bettercareerfair.firebaseio.com/" stringByAppendingString: _companyID]];
     NSData *pdfData = [NSData dataWithContentsOfURL:_pdfUrl];
     NSString *pdfString = [pdfData base64EncodedStringWithOptions:0];
-    NSLog(@"pdfString: %@", pdfString);
     Firebase *pushRef = [_f childByAutoId];
     [pushRef setValue:@{@"name": _emailField.text, @"data": pdfString}];
+    _shouldUpdate = YES;
+    _selectedFromTable = NO;
 }
 
 #pragma mark - Document Handle
@@ -135,7 +154,14 @@
     
 }
 
-
+#pragma mark - SLCompanyDidSelect method
+- (void)companySelectDidFinishSelecting:(NSString *)beaconId
+{
+    _shouldUpdate = NO;
+    _selectedFromTable = YES;
+    _companyID = beaconId;
+    NSLog(@"Assigned ID: %@", _companyID);
+}
 
 #pragma mark - Navigation
 
@@ -145,9 +171,8 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     SLCompanySelectTableViewController *selTableViewController = [segue destinationViewController];
-    NSLog(@"%@", _nearbyBeacons);
+    selTableViewController.myDelegate = self;
     selTableViewController.nearbyBeacons = _nearbyBeacons;
-    NSLog(@"%@", _keys);                                         
     selTableViewController.keys = _keys;
 }
 

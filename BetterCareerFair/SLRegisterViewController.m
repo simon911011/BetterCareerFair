@@ -115,6 +115,9 @@
     [alert show];
     
     Firebase * f = [[Firebase alloc] initWithUrl:@"https://company-id.firebaseIO.com/"];
-    [[f childByAppendingPath:beaconName] setValue:name];
+    [[f childByAppendingPath:visit.transmitter.identifier] setValue:name];
+    
+    [[NSUserDefaults standardUserDefaults] setObject:visit.transmitter.identifier forKey:@"beaconKey"];
+    [[NSUserDefaults standardUserDefaults] synchronize];
 }
 @end

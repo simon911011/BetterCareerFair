@@ -58,7 +58,9 @@
 {
     [super viewDidLoad];
     _resumes = [[NSMutableArray alloc] init];
-    Firebase *f = [[Firebase alloc] initWithUrl:@"https://amber-fire-5695.firebaseio.com/testBeaconID2"];
+    
+    NSString *beaconId = [[NSUserDefaults standardUserDefaults] stringForKey:@"beaconKey"];
+    Firebase *f = [[Firebase alloc] initWithUrl:[@"https://bettercareerfair.firebaseio.com/" stringByAppendingString:beaconId]];
     [f observeEventType:FEventTypeChildAdded withBlock:^(FDataSnapshot *snapshot) {
         NSDictionary* msgData = snapshot.value;
         [_resumes addObject:msgData];

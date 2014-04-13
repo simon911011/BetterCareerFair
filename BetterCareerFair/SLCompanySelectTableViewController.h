@@ -8,8 +8,17 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SLCompanySelectTableViewController : UITableViewController
-@property (nonatomic, weak) NSMutableDictionary *nearbyBeacons;
-@property (nonatomic, weak) NSArray *keys;
+@protocol SLCompanySelectDelegate <NSObject>
+
+- (void) companySelectDidFinishSelecting: (NSString *)beaconId;
+
+@end
+
+@interface SLCompanySelectTableViewController : UITableViewController {
+    id _myDelegate;
+}
+@property (nonatomic, strong) NSMutableDictionary *nearbyBeacons;
+@property (nonatomic, strong) NSArray *keys;
+@property id<SLCompanySelectDelegate> myDelegate;
 
 @end

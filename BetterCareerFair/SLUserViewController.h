@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import <FYX/FYXVisitManager.h>
+#import "SLCompanySelectTableViewController.h"
 
-@interface SLUserViewController : UIViewController <UIDocumentInteractionControllerDelegate, UITextFieldDelegate, FYXVisitDelegate>
+@interface SLUserViewController : UIViewController <UIDocumentInteractionControllerDelegate, UITextFieldDelegate, FYXVisitDelegate, SLCompanySelectDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *emailField;
 @property (weak, nonatomic) IBOutlet UIButton *viewTableButton;
 @property (weak, nonatomic) IBOutlet UIButton *sendButton;
